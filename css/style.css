@@ -1,0 +1,325 @@
+
+:root {
+    --main-width: 700px;
+    --main-color: black;
+    --main-backgroud-color: white;
+}
+
+body {
+    font-family: 'Noto Serif JP', sans-serif;
+    color: var(--main-color);}
+
+/* ナビゲーションバー */
+
+#nav-bar {
+    height: 60px;
+    max-width: calc(var(--main-width) - 30px);
+    margin: 15px auto;
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    transition: all .3s;
+}
+
+#nav-bar.hide {
+    top: -90px;
+    opacity: 0;
+}
+
+#nav-menu {
+    margin: 0 15px;
+    background-color: #505050;
+    border-radius: 30px;
+    box-shadow: 0 0 5px 0 black;
+}
+
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+    width: calc(100% - 75px);
+    height: 60px;
+    max-width: var(--main-width);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-menu ul li {
+    display: block;
+    height: 100%;
+    width: 25%;
+    border-left: 1px solid white;
+}
+
+#nav-menu ul li:last-of-type {
+    border-right: 1px solid white;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+}
+
+#nav-menu ul li a div {
+    padding: 15px;
+    line-height: 30px;
+    text-align: center;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+#nav-menu ul li a div span {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+#nav-menu ul li a div span:after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+#nav-menu ul li a div:hover span:after {
+    transform: scale(1, 1);
+}
+
+#nav-menu ul li a div:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 0;
+    width: 0;
+    border-radius: 100%;
+    background-color: #4c4c4c;
+    z-index: 0;
+    transition: all .3s;
+}
+
+#nav-menu ul li a div:hover:after {
+    height: 300px;
+    width: 300px;
+    box-shadow: 0px 0px 10px 10px #4c4c4c;
+}
+
+#nav-menu-btn {
+    display: none;
+}
+
+/* 共通 */
+
+section > div[class$="wrap"] {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+h2 {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+h2:after, h2:before {
+    content: "";
+    height: 5px;
+    width: 100%;
+    display: block;
+    background: linear-gradient(45deg, transparent, var(--main-color), transparent);
+    margin: 5px auto;
+}
+
+/* TOP */
+
+#top {
+    height: 800px;
+    max-width: 100%;
+    margin: 0px;
+    position: relative;
+    background: fixed url(/img/maps/isla.png) center center / cover;
+}
+
+.top-title {
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    right: 0px;
+    height: 140px;
+    background: linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.8) 10%, rgb(255, 255, 255, 0.8) 90%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 0px 20px white;
+}
+
+.top-title p {
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.top-title h1 {
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+#top:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background: linear-gradient(0deg, white, transparent);
+}
+
+/* STORY */
+
+.story-sentence {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin: 30px;
+}
+
+.story-sentence strong {
+    font-size: 130%;
+    color: rgba(255, 100, 0, 1);
+}
+
+/* DESCRIPTION */
+
+.description-content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-content.rev {
+    flex-direction: row-reverse;
+}
+
+.description-content .description-content-image {
+    width: 53%;
+}
+
+.description-content .description-content-sentence {
+    width: 41%;
+}
+
+.description-content .description-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-content .description-content-sentence p {
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.description-content .description-content-sentence p:first-letter {
+    font-size: 250%;
+    padding: 3px;
+    line-height: 1;
+    float: left;
+}
+
+/* INFORMATION */
+
+.information-table {
+    margin-top: 50px;
+}
+
+.information-table table {
+    width: 100%;
+}
+
+.information-table table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.information-table table th,
+.information-table table td {
+    padding: 5px 20px;
+    border-bottom: 1px dashed #e4e4e4;
+}
+
+.information-table table th {
+    width: 30%;
+    text-align: center;
+}
+
+.information-table table td {
+    width: 70%;
+}
+
+.information-table p {
+    margin: 20px 0 0 0;
+    font-size: 70%;
+}
+
+/* DOWNLOAD */
+
+/* GALLARY */
+
+.gallary-content {
+    margin: 50px 0;
+}
+
+.gallary-content .gallary-content-movie {
+    margin: 50px 0;
+    height: 393px;
+}
+
+.gallary-content .gallary-content-movie iframe {
+    width: 100%;
+    height: 393px;
+}
+
+.gallary-content .gallary-content-image {
+    margin: 50px 0;
+}
+
+.gallary-content .gallary-content-image ul {
+    padding: 0;
+    margin: 0;
+}
+
+.gallary-content .gallary-content-image img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
+
+.slick-slide {
+    outline: none;
+}
+
+.thumbnail .slick-slide img {
+    transition: outline 0.3s;
+}
+
+.thumbnail .slick-current img {
+    outline: 1px solid white;
+    outline-offset: -3px;
+}

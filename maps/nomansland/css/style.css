@@ -1,0 +1,307 @@
+
+:root {
+    --main-width: 1200px;
+}
+
+body {
+    font-family: 'Noto Serif JP', sans-serif;
+    color: var(--main-font-color);
+    background-color: var(--main-backgroud-color);
+}
+
+/* ヘッダー */
+
+header {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 0 50px;
+}
+
+header .header-content {
+    height: 100px;
+    width: 150px;
+    padding: 30px;
+    transition: all .3s;
+}
+
+header .tetandtat {
+    margin-right: auto;
+    width: 100px;
+    padding: 0;
+    background-color: red;
+}
+
+header .twitter,
+header .discord {
+    width: 100px;
+}
+
+header .twitter img {
+    height: 60%;
+}
+
+header .discord img {
+    height: 90%;
+}
+
+header .header-content div img,
+header .header-content div span {
+    transition: all .3s;
+}
+
+header .header-content div:hover img,
+header .header-content div:hover span {
+    opacity: 0.7;
+}
+
+header .header-content a {
+    text-decoration: none;
+}
+
+header .header-content a div {
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+}
+
+header .header-content a div span {
+    color: var(--main-font-color);
+    letter-spacing: 3px;
+}
+
+header .header-content a div span:after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: var(--main-font-color);
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+header .header-content a div:hover span:after {
+    transform: scale(1, 1);
+}
+
+/* 共通 */
+
+section > div[class$="wrap"] {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+h2 {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+h2:after, h2:before {
+    content: "";
+    height: 5px;
+    width: 100%;
+    display: block;
+    background: linear-gradient(45deg, transparent, var(--main-font-color), transparent);
+    margin: 5px auto;
+}
+
+h2 div {
+    margin: 20px;
+}
+
+/* TOP */
+
+#top {
+    height: 800px;
+    max-width: 100%;
+    margin: 0px;
+    position: relative;
+    background: fixed url(../img/pyramid.png) center center / cover;
+}
+
+.top-title {
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    right: 0px;
+    height: 140px;
+    background: linear-gradient(0deg, transparent 0%, rgba(var(--main-backgroud-color), 0.8) 10%, rgb(var(--main-backgroud-color), 0.8) 90%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 0px 20px var(--main-font-color);
+}
+
+.top-title p {
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.top-title h1 {
+    letter-spacing: 10px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.top-title h1 strong {
+    color: var(--strong-color);
+}
+
+#top:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background: linear-gradient(0deg, var(--main-backgroud-color), transparent);
+}
+
+/* STORY */
+
+.story-sentence {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin: 30px;
+}
+
+.story-sentence strong {
+    font-size: 130%;
+    color: var(--strong-color);
+}
+
+/* DESCRIPTION */
+
+.description-content {
+    margin: 50px 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-content.rev {
+    flex-direction: row-reverse;
+}
+
+.description-content .description-content-image {
+    width: 53%;
+}
+
+.description-content .description-content-sentence {
+    width: 41%;
+}
+
+.description-content .description-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-content .description-content-sentence p {
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.description-content .description-content-sentence p:first-letter {
+    font-size: 250%;
+    padding: 3px;
+    line-height: 1;
+    float: left;
+}
+
+/* INFORMATION */
+
+.information-content {
+    margin: 50px 50px 0;
+}
+
+.information-content table {
+    width: 100%;
+}
+
+.information-content table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.information-content table th,
+.information-content table td {
+    padding: 5px 20px;
+    border-bottom: 1px dashed var(--main-font-color);
+}
+
+.information-content table th {
+    width: 30%;
+    text-align: center;
+}
+
+.information-content table td {
+    width: 70%;
+}
+
+.information-content p {
+    margin: 20px 0 0 0;
+    font-size: 70%;
+}
+
+/* DOWNLOAD */
+
+/* GALLARY */
+
+.gallary-content {
+    margin: 50px 0;
+}
+
+.gallary-content .gallary-content-movie {
+    margin: 50px 0;
+    height: 393px;
+}
+
+.gallary-content .gallary-content-movie iframe {
+    width: 100%;
+    height: 393px;
+}
+
+.gallary-content .gallary-content-image {
+    margin: 50px 0;
+}
+
+.gallary-content .gallary-content-image ul {
+    padding: 0;
+    margin: 0;
+}
+
+.gallary-content .gallary-content-image img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
+
+.slick-slide {
+    outline: none;
+}
+
+.thumbnail .slick-slide img {
+    transition: outline 0.3s;
+}
+
+.thumbnail .slick-current img {
+    outline: 1px solid white;
+    outline-offset: -3px;
+}

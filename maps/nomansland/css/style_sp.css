@@ -1,0 +1,189 @@
+
+body {
+    font-family: 'Montserrat', 'Noto Serif JP', sans-serif;
+    color: var(--main-color);
+}
+
+/* ナビゲーションバー */
+
+#nav-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    opacity: 0;
+    background-color: #000000cc;
+    transition: all .3s;
+    z-index: 1;
+}
+
+#nav-menu.open {
+    left: 0px;
+    opacity: 1;
+}
+
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 80px 0 0 0;
+}
+
+#nav-menu ul li {
+    display: block;
+    border-bottom: 1px solid white; 
+}
+
+#nav-menu ul li:first-of-type {
+    border-top: 1px solid white; 
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+}
+
+#nav-menu ul li a div {
+    width: 100%;
+    padding: 15px;
+    line-height: 30px;
+    text-align: center;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+#nav-menu ul li a div span {
+    color: white;
+    position: relative;
+    z-index: 1;
+    transition: all .3s;
+}
+
+#nav-menu ul li a div:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 0;
+    transition: all .3s;
+}
+
+#nav-menu ul li a div:hover:after {
+    left: 0px;
+}
+
+#nav-menu ul li a div:hover span {
+    color: black;
+}
+
+#nav-menu-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 2;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+}
+
+/* 共通 */
+
+h2 {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 50px 30px;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2:after {
+    content: "";
+    height: 5px;
+    width: 100%;
+    display: block;
+    background: linear-gradient(45deg, transparent, black, transparent);
+    margin: 5px auto;
+}
+
+/* トップコンテンツ */
+
+#top {
+    background: linear-gradient(0deg, white 5%, transparent 50%), url(/img/isla1.png) center center / cover no-repeat;
+    height: 500px;
+}
+
+.top-title {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background: linear-gradient(0deg, transparent 0%, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.8) 90%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-title h1 {
+    font-size: 5vw;
+    font-family: 'Sawarabi Mincho';
+    color: white;
+    text-shadow: 0px 0px 20px white;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+/* ストーリー */
+
+#story {
+    margin-top: 50px;
+}
+
+.story-sentence {
+    text-align: center;
+    padding: 10px;
+}
+
+/* 概要 - Overview */
+
+.overview-title {
+    width: 100%;
+}
+
+.overview-title h1 {
+    margin: 50px 0;
+}
+
+.overview-content {
+    width: 100%;
+}
+
+.overview-content {
+    max-width: 960px;
+    margin: auto;
+}
+
+.overview-content .overview-content-image {
+    width: 100%;
+}
+
+.overview-content .overview-content-sentence {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+.overview-content .overview-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overview-content .overview-content-sentence h2 {
+    width: 100%;
+}
+
+/* 詳細 - detail */
